@@ -1,0 +1,11 @@
+[extend]
+useDefault = true
+
+# The generic-api-key heuristic mistakes this exact Solidity inheritance
+# declaration for a token value. Limit the exception to this file AND line.
+[[allowlists]]
+description = "Solidity ShroudToken inheritance declaration, not a credential"
+condition = "AND"
+paths = ['''(^|/)contracts/ShroudToken\.sol$''']
+regexTarget = "line"
+regexes = ['''^contract ShroudToken is ERC20, ERC20Burnable \{$''']

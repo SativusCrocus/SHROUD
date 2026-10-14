@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b100e">
+  <meta name="description" content="Explore CipherShroud, an open-source development protocol for zero-knowledge withdrawals, shielded pool accounting, and segregated yield.">
+  <meta property="og:title" content="CipherShroud — Privacy, by proof.">
+  <meta property="og:description" content="A transparent foundation for private transactions. Explore the protocol and its interactive pool lab.">
+  <meta property="og:type" content="website">
+  <title>CipherShroud — Privacy, by proof.</title>
+  <link rel="icon" href="/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="CipherShroud home"><img src="/mark.svg" width="30" height="34" alt=""><span>Cipher<span class="brand-light">Shroud</span></span></a>
+      <nav aria-label="Main navigation">
+        <a href="#protocol">Protocol</a><a href="#lab">Pool lab</a><a href="#developers">Developers</a>
+      </nav>
+      <a class="button button-small button-outline header-cta" href="https://github.com/SativusCrocus/SHROUD" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> OPEN SOURCE · IN DEVELOPMENT</div>
+          <h1 id="hero-title">Privacy,<br>by <span class="accent">proof.</span></h1>
+          <p class="hero-description">A foundation for private transactions.<br>Prove your right to withdraw.<br>Keep the note behind it to yourself.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#lab">Explore the pool lab <span aria-hidden="true">↗</span></a><a class="text-link" href="#protocol">Understand the protocol <span aria-hidden="true">↓</span></a></div>
+          <div class="hero-footnote"><span class="bracket">[</span> EVM REFERENCE IMPLEMENTATION <span class="bracket">]</span></div>
+        </div>
+
+        <div class="proof-visual" aria-label="Conceptual diagram of a private note, a zero-knowledge proof, and a public withdrawal">
+          <div class="visual-topline"><span>THE PRIVACY LAYER</span><span class="mono muted">CS / 001</span></div>
+          <div class="orbital-grid" aria-hidden="true"></div>
+          <svg class="orbital-art" viewBox="0 0 600 510" aria-hidden="true">
+            <defs><linearGradient id="veil" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c5fa9a"/><stop offset="1" stop-color="#457355"/></linearGradient></defs>
+            <g class="orbit-lines" fill="none" stroke="#45634b" stroke-width="1">
+              <ellipse cx="300" cy="246" rx="228" ry="119" transform="rotate(-28 300 246)"/>
+              <ellipse cx="300" cy="246" rx="228" ry="119" transform="rotate(28 300 246)"/>
+              <ellipse cx="300" cy="246" rx="174" ry="174"/><ellipse cx="300" cy="246" rx="117" ry="212" transform="rotate(29 300 246)"/>
+              <circle cx="300" cy="246" r="226" stroke-dasharray="2 9"/>
+            </g>
+            <path class="moving-route" d="M81 197 Q280 37 499 252 Q316 438 105 319" fill="none" stroke="#b9f995" stroke-width="1.5" stroke-dasharray="3 9"/>
+            <g class="shroud-mark" fill="none" stroke="url(#veil)" stroke-width="1.4">
+              <path d="M300 126 397 180 385 294 300 356 215 294 203 180Z"/>
+              <path d="M300 140 384 187 373 287 300 342 227 287 216 187Z"/>
+              <path d="M300 154 371 194 361 280 300 328 239 280 229 194Z"/>
+              <path d="M300 168 358 201 349 273 300 314 251 273 242 201Z"/>
+              <path d="M300 182 345 208 337 266 300 300 263 266 255 208Z"/>
+              <path d="M300 196 332 215 325 259 300 286 275 259 268 215Z"/>
+              <path d="M300 210 319 222 313 252 300 272 287 252 281 222Z"/>
+              <path d="M300 126V356M203 180 385 294M397 180 215 294" opacity=".3"/>
+            </g>
+            <g fill="#c5fa9a"><circle cx="83" cy="197" r="4"/><circle cx="499" cy="252" r="4"/><circle cx="300" cy="420" r="3"/></g>
+          </svg>
+          <div class="diagram-tag tag-private"><span class="tiny-dot"></span> PRIVATE NOTE<small>stays with you</small></div>
+          <div class="diagram-tag tag-public"><span class="tiny-dot"></span> PUBLIC PROOF<small>verified on-chain</small></div>
+          <div class="visual-bottomline"><span class="status-dot"></span><span>KNOWLEDGE WITHOUT DISCLOSURE</span><span aria-hidden="true">⌁</span></div>
+        </div>
+      </section>
+
+      <div class="technical-strip" aria-label="Protocol technologies"><span class="strip-label">BUILT ON VERIFIABLE PRIMITIVES</span><span>Groth16</span><span>BN254</span><span>Poseidon</span><span>Solidity</span><span class="strip-end">0.1.0 <span class="muted">/ DEVELOPMENT</span></span></div>
+
+      <section class="protocol-section section" id="protocol" aria-labelledby="protocol-title">
+        <div class="section-heading"><div><div class="eyebrow muted">01 / THE PROTOCOL</div><h2 id="protocol-title">Less exposure.<br>Explicit guarantees.</h2></div><p>A small set of primitives, with visible boundaries.<br>Explore what the implementation does—and what still needs to be proven.</p></div>
+        <div class="pillars">
+          <article class="pillar"><div class="pillar-top"><span class="pillar-number">01</span><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 27V14l12-7 12 7v13l-12 7ZM8 14l12 7 12-7M20 21v13"/></svg></div><h3>Your note.<br>Your withdrawal.</h3><p>Generate a proof locally. A Merkle membership proof establishes that you own a deposited note without publishing which commitment you own.</p><div class="pillar-detail"><span class="tiny-dot"></span> CLIENT-SIDE ZK PROOFS</div></article>
+          <article class="pillar"><div class="pillar-top"><span class="pillar-number">02</span><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 20h10l10-11h10M15 20l10 11h10M25 20h10"/><circle cx="10" cy="20" r="3"/></svg></div><h3>Cover traffic.<br>Open research.</h3><p>Two or three random padding records accompany each operation. They are observable events, with no demonstrated resistance to AI-based chain analysis.</p><div class="pillar-detail"><span class="tiny-dot"></span> EXPERIMENTAL PADDING</div></article>
+          <article class="pillar"><div class="pillar-top"><span class="pillar-number">03</span><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M7 31h26M10 26V17h6v9M23 26V9h6v17M7 10l10-5"/></svg></div><h3>Principal tracked.<br>Yield separated.</h3><p>An Aave adapter supplies assets above the reserve target. Only accounted surplus can reach the buyback treasury. External liquidity still limits withdrawals.</p><div class="pillar-detail"><span class="tiny-dot"></span> SEGREGATED ACCOUNTING</div></article>
+        </div>
+      </section>
+
+      <section class="lab-section section" id="lab" aria-labelledby="lab-title">
+        <div class="section-heading"><div><div class="eyebrow muted">02 / EXPLORE THE MECHANICS</div><h2 id="lab-title">Inside the pool.</h2></div><p>An interactive accounting model.<br>No wallet connection. No transactions. No real funds.</p></div>
+        <div class="lab">
+          <div class="lab-topbar"><div><span class="status-dot"></span><strong>CipherShroud pool</strong><span class="chip">SIMULATION</span></div><button class="reset-button" id="reset-lab" type="button">Reset <span aria-hidden="true">↺</span></button></div>
+          <div class="lab-layout">
+            <div class="lab-controls">
+              <div class="tabs" role="tablist" aria-label="Pool operation"><button type="button" class="tab active" role="tab" id="tab-deposit" aria-selected="true" aria-controls="panel-deposit" data-tab="deposit">Deposit</button><button type="button" class="tab" role="tab" id="tab-withdraw" aria-selected="false" aria-controls="panel-withdraw" tabindex="-1" data-tab="withdraw">Withdraw</button><button type="button" class="tab" role="tab" id="tab-yield" aria-selected="false" aria-controls="panel-yield" tabindex="-1" data-tab="yield">Yield</button></div>
+              <div id="panel-deposit" role="tabpanel" aria-labelledby="tab-deposit" class="tab-panel">
+                <p class="field-label">FIXED NOTE DENOMINATION</p><div class="amount-display">100<span>DEMO UNITS</span></div><p class="control-description">Each deposit creates one note. The model keeps 20% of principal liquid and supplies the remainder.</p>
+                <div class="detail-row"><span>Reserve target</span><strong>20%</strong></div><div class="detail-row"><span>Illustrative padding records</span><strong>2–3</strong></div>
+                <button class="button button-primary full-width" id="deposit-demo" type="button">Add demo deposit <span aria-hidden="true">+</span></button>
+              </div>
+              <div id="panel-withdraw" role="tabpanel" aria-labelledby="tab-withdraw" class="tab-panel" hidden>
+                <label class="field-label" for="note-select">SELECT AN UNSPENT DEMO NOTE</label><select id="note-select"></select><p class="control-description">Redeem one note for 100 demo units. Its simulated nullifier can be used only once. This model does not generate ZK proofs.</p>
+                <label class="toggle-row"><input type="checkbox" id="illiquid-toggle"><span>Simulate unavailable lending liquidity</span></label>
+                <button class="button button-primary full-width" id="withdraw-demo" type="button">Withdraw demo note <span aria-hidden="true">↗</span></button><button class="replay-button" id="replay-demo" type="button" disabled>Try replaying the last withdrawal</button>
+              </div>
+              <div id="panel-yield" role="tabpanel" aria-labelledby="tab-yield" class="tab-panel" hidden>
+                <p class="field-label">ILLUSTRATIVE INTEREST CREDIT</p><div class="amount-display">10<span>DEMO UNITS</span></div><p class="control-description">Add a hypothetical 10 units to supplied assets. Harvesting sends only surplus to the treasury and preserves the principal reserve.</p>
+                <div class="detail-row"><span>Outstanding surplus</span><strong id="surplus-value">0 units</strong></div>
+                <button class="button button-primary full-width" id="yield-demo" type="button">Simulate yield <span aria-hidden="true">+</span></button><button class="button button-outline full-width harvest-button" id="harvest-demo" type="button" disabled>Harvest surplus <span aria-hidden="true">↗</span></button>
+              </div>
+              <noscript><p class="notice">Enable JavaScript to use the off-chain simulation. Documentation and source links work without it.</p></noscript>
+            </div>
+            <div class="lab-state">
+              <div class="state-title"><span class="eyebrow muted">DEMO STATE</span><span class="state-label">Browser memory only</span></div>
+              <div class="stats-grid"><div><span>Principal liabilities</span><strong id="principal-value">300<span>units</span></strong></div><div><span>Liquid reserve</span><strong id="reserve-value">60<span>units</span></strong></div><div><span>Supplied assets</span><strong id="supplied-value">240<span>units</span></strong></div><div><span>Treasury surplus received</span><strong id="treasury-value">0<span>units</span></strong></div></div>
+              <div class="backing-label"><span>Principal backing</span><strong id="backing-value">100%</strong></div><div class="backing-bar" aria-hidden="true"><span></span></div>
+              <div class="activity-header"><span class="eyebrow muted">LATEST OPERATION</span><span class="mono" id="note-count">3 UNSPENT NOTES</span></div>
+              <div class="activity" id="activity" role="status" aria-live="polite" aria-atomic="true"><span class="activity-icon" aria-hidden="true">✓</span><div><strong id="activity-title">Pool ready to explore</strong><p id="activity-description">Three illustrative deposits. Try a deposit, withdrawal, or yield harvest.</p></div></div>
+              <p class="simulation-note">The real protocol can fail or become illiquid. This simplified model is not a proof, price quote, or promise of returns.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="build-section section" id="developers" aria-labelledby="build-title">
+        <div class="build-copy"><div class="eyebrow muted">03 / VERIFY IT YOURSELF</div><h2 id="build-title">Open code.<br>Visible assumptions.</h2><p>Run the real Groth16 demo on a local EVM. Inspect the contracts, reproduce the tests, and understand the trust model before building on it.</p><a class="text-link" href="https://github.com/SativusCrocus/SHROUD/blob/main/README.md" target="_blank" rel="noopener noreferrer">Read the technical documentation <span aria-hidden="true">↗</span></a><div class="test-status"><span class="status-dot"></span>30 core tests passed <span class="muted">· local validation</span></div></div>
+        <div class="terminal"><div class="terminal-header"><div class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>GET STARTED LOCALLY</span><button type="button" id="copy-commands" aria-label="Copy installation commands">Copy <span aria-hidden="true">⧉</span></button></div><pre><code id="install-commands">git clone https://github.com/SativusCrocus/SHROUD.git
+cd SHROUD
+npm ci --ignore-scripts
+npm run circuit:setup
+npm run build
+npm test
+npm run demo</code></pre><div class="terminal-footer"><span class="tiny-dot"></span> Node 22+ · Python 3.10+ · Foundry</div><p class="sr-only" id="copy-status" role="status"></p></div>
+      </section>
+
+      <section class="release-note" aria-labelledby="release-title"><div class="release-icon" aria-hidden="true">i</div><div><h2 id="release-title">Built for exploration. Awaiting independent review.</h2><p>The circuit uses a local development setup. DeFi integration tests use mocks. There is no public deployment of the pool, completed external audit, or demonstrated anti-analysis protection. This website cannot accept deposits.</p><a href="https://github.com/SativusCrocus/SHROUD/blob/main/docs/THREAT-MODEL.md" target="_blank" rel="noopener noreferrer">Read the threat model <span aria-hidden="true">↗</span></a></div><span class="release-tag">DEVELOPMENT<br>REFERENCE</span></section>
+    </main>
+
+    <footer><a class="brand" href="#"><img src="/mark.svg" width="25" height="28" alt=""><span>Cipher<span class="brand-light">Shroud</span></span></a><p>Privacy begins with understanding the assumptions.</p><div><a href="https://github.com/SativusCrocus/SHROUD" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://github.com/SativusCrocus/SHROUD/blob/main/docs/VALIDATION.md" target="_blank" rel="noopener noreferrer">Validation ↗</a></div></footer>
+  </div>
+</body>
+</html>

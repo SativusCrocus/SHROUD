@@ -1,0 +1,5 @@
+{
+  "replacements": {},
+  "legacy_hosts": [],
+  "protected_paths": ["scripts/rebrand.py", "tests/test_rebrand.py", "rebrand.manifest.example.json"]
+}

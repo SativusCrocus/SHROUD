@@ -1,0 +1,35 @@
+{
+  "name": "ciphershroud",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "CipherShroud development reference: fixed-denomination ZK withdrawals and segregated yield",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "circuit:setup": "node scripts/setup-circuit.mjs",
+    "build": "forge build",
+    "build:frontend": "node scripts/build-frontend.mjs",
+    "test:frontend": "npm run build:frontend && node --test tests/frontend.test.mjs",
+    "dev:frontend": "npm run build:frontend && python3 -m http.server 4173 --bind 127.0.0.1 --directory dist",
+    "test": "npm run build:frontend && python3 -m unittest discover -s tests -p 'test_*.py' && node --test tests/*.test.mjs && forge test",
+    "demo": "node scripts/local-demo.mjs",
+    "keeper": "node --env-file=.env scripts/keeper.mjs"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.6.1",
+    "circomlib": "2.0.5",
+    "circomlibjs": "0.1.7",
+    "ethers": "6.17.0",
+    "snarkjs": "0.7.6"
+  },
+  "devDependencies": {
+    "circom2": "0.2.23"
+  },
+  "overrides": {
+    "ws": "8.22.0",
+    "underscore": "1.13.8"
+  },
+  "license": "GPL-3.0-or-later"
+}

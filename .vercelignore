@@ -1,0 +1,7 @@
+# Upload only the static frontend and its dependency-free build script.
+*
+!frontend
+!frontend/**
+!scripts
+!scripts/build-frontend.mjs
+!vercel.json
